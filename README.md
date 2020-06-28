@@ -16,8 +16,10 @@ Your browsing habits reveal a lot about your personal life. The metadata you gen
     -ls                              List profiles
     -o, --open                       Open profile directory
     -b, --base                       Install base setup
-    -g, --ghacks                     Install base setup, in addition to ghacks-user.js
-    -c, --curated                    Install base setup, in addition to ghacks-user.js and curated preferences
+    -g, --ghacks                     Install base setup, in addition to
+                                     ghacks-user.js
+    -c, --curated                    Install base setup, in addition to
+                                     ghacks-user.js and curated preferences
 
 # OVERVIEW
 Below is everything included in this script:
@@ -29,11 +31,11 @@ Below is everything included in this script:
 # DETAILS
 Below is every tweak and its source. Some sources contain duplicate instructions, which have been redacted for brevity:
 
-#### (2019.12.11) [How to secure your online accounts](https://www.youtube.com/watch?v=3H2CKTRqOEQ)
+### (2019.12.11) [How to secure your online accounts](https://www.youtube.com/watch?v=3H2CKTRqOEQ)
 [about:preferences]
 * General > Network Settings > Settings... > check `Enable DNS over HTTPS`
 
-#### (2019.03.17) [How to configure Firefox settings for maximum privacy and security](https://www.youtube.com/watch?v=tQhWdsFMc24)
+### (2019.03.17) [How to configure Firefox settings for maximum privacy and security](https://www.youtube.com/watch?v=tQhWdsFMc24)
 [about:preferences]
 * Privacy & Security > Content Blocking > Strict (conflicts with [tweaks from an older tutorial](README.md#L108-L109), which supercedes this)
 * Privacy & Security > History > Firefox will `Use custom settings for history`
@@ -85,7 +87,7 @@ Below is every tweak and its source. Some sources contain duplicate instructions
 [about:addons > Decentraleyes]
 * Settings > check `Block requests for missing resources`
 
-#### (2018.10.26) [How to stop Google spying? Google privacy settings, uBlock Origin and Google alternatives.](https://www.youtube.com/watch?v=6EfJR1lI0l0)
+### (2018.10.26) [How to stop Google spying? Google privacy settings, uBlock Origin and Google alternatives.](https://www.youtube.com/watch?v=6EfJR1lI0l0)
 [about:addons > uBlock Origin]
 * Dashboard > My rules > Temporary rules > Paste the list of rules below into the text area. Save and commit your changes.
 ```
@@ -108,12 +110,12 @@ Below is every tweak and its source. Some sources contain duplicate instructions
 * ytimg.com * block
 ```
 
-#### (2018.02.22) [How to protect your online privacy in 2018 | From noob to pro in 14 minutes or less | Tutorial](https://www.youtube.com/watch?v=gFsRXfifcYg)
+### (2018.02.22) [How to protect your online privacy in 2018 | From noob to pro in 14 minutes or less | Tutorial](https://www.youtube.com/watch?v=gFsRXfifcYg)
 [about:preferences]
 * Privacy & Security > Tracking Protection > select `Always`
 * Privacy & Security > History > Accept third-party cookies `Never`
 
-#### Notes
+### Notes
 By following the steps above, uBlock Origin will be set to hard mode. Per suggestion of the [Decentraleyes FAQ](https://git.synz.io/Synzvato/decentraleyes/-/wikis/Frequently-Asked-Questions#why-doesnt-it-deliver-resources-from-cdns-i-block-using-a-different-add-on):
 
 [about:addons > uBlock Origin]
