@@ -5,7 +5,7 @@ To install it right away for Linux users, type:
     git clone https://github.com/sckitt/inject-hatred.git && cd inject-hatred && sudo chmod +x inject-hatred.sh
 
 # DESCRIPTION
-**inject-hatred** is a Bash script to improve the privacy and security of Firefox. The goal is to automate every tweak recommended by [The Hated One](https://www.youtube.com/channel/UCjr2bPAyPV7t35MvcgT3W8Q). Presets are available for more strict threat models. Currently tested and developed for Linux. Modify, redistribute or use it however you like.
+**inject-hatred** is a Bash script to improve the privacy and security of Firefox. The goal is to automate every tweak recommended by [The Hated One](https://www.youtube.com/channel/UCjr2bPAyPV7t35MvcgT3W8Q); almost all preference tweaks have been automated, extension tweaks are a work in progress. Additional presets are available for strict threat models. Currently tested and developed for Linux. Modify, redistribute or use it however you like.
 
     inject-hatred [OPTIONS] PROFILE
 
@@ -118,7 +118,7 @@ Below is every tweak and its source. Some sources contain duplicate instructions
 ### Notes
 By following the steps above, uBlock Origin will be set to hard mode. Per suggestion of the [Decentraleyes FAQ](https://git.synz.io/Synzvato/decentraleyes/-/wikis/Frequently-Asked-Questions#why-doesnt-it-deliver-resources-from-cdns-i-block-using-a-different-add-on):
 
-[about:addons > uBlock Origin]
+**[about:addons > uBlock Origin]**
 * Dashboard > My rules > Temporary rules > Paste the list of rules below into the text area. Save and commit your changes.
 ```
 * ajax.googleapis.com * noop
