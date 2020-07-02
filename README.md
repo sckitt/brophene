@@ -13,7 +13,7 @@ Below is everything included in this script:
 
 1. Configure preferences ([two are missing](https://github.com/sckitt/inject-hatred/blame/master/README.md#L115-L116))
 2. Download and install [ghacks-user.js](https://github.com/ghacksuserjs/ghacks-user.js/) (optional)
-3. Download and install obligatory extensions ([complete listing](https://github.com/sckitt/inject-hatred/blame/master/README.md#L62-L66), [configuring extensions](https://github.com/sckitt/inject-hatred/blame/master/README.md#L68-L88))
+3. Download and install obligatory extensions ([complete listing](https://github.com/sckitt/inject-hatred/blame/master/README.md#L62-L66), configuring extensions: [1](https://github.com/sckitt/inject-hatred/blame/master/README.md#L68-L88) [2](https://github.com/sckitt/inject-hatred/blame/master/README.md#L91-L111) 3[https://github.com/sckitt/inject-hatred/blame/master/README.md#L121-L139])
 4. Download and install optional extensions (customizable, disabled by default)
 
 # WHY?
