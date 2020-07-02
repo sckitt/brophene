@@ -7,7 +7,7 @@ To install it right away for Linux users, type:
 # DESCRIPTION
 **inject-hatred** is a Bash script to improve the privacy and security of Firefox. The goal is to automate every tweak recommended by [The Hated One](https://www.youtube.com/channel/UCjr2bPAyPV7t35MvcgT3W8Q); almost all preference tweaks have been automated, extension tweaks are a work in progress. Additional presets are available for strict threat models. Currently tested and developed for Linux. Modify, redistribute or use it however you like.
 
-    inject-hatred [OPTIONS] PROFILE
+    ./inject-hatred.sh [OPTIONS] PROFILE
 
 Below is everything included in this script:
 
@@ -37,7 +37,7 @@ Below is every tweak and its source. Some sources contain duplicate instructions
 
 ### (2019.03.17) [How to configure Firefox settings for maximum privacy and security](https://www.youtube.com/watch?v=tQhWdsFMc24)
 **[about:preferences]**
-* Privacy & Security > Content Blocking > Strict (conflicts with [tweaks from an older tutorial](https://github.com/sckitt/inject-hatred/blame/master/README.md#L115-L116), which supercedes this)
+* Privacy & Security > Content Blocking > Strict (conflicts with [tweaks from an older tutorial](https://github.com/sckitt/inject-hatred/blame/master/README.md#L114-L116), which supercedes this)
 * Privacy & Security > History > Firefox will `Use custom settings for history`
 * Privacy & Security > History > check `Always use private browsing mode`
 * Privacy & Security > Cookies and Site Data > Clear Data...
