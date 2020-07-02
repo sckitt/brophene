@@ -9,7 +9,6 @@ list_profiles () {
 
 check_profile_exists () {
     if [ -d "$PROFILES/$1" ] && [ $# -eq 1 ]; then
-        # echo "$1 exists!"
         :
     else
         echo "bash: $1: No such directory"
@@ -28,9 +27,6 @@ check_ghacks_support () {
     if (( $(echo "$major_version < 51.0" |bc -l) )); then
         echo "Please upgrade to a newer version of Firefox (51.0+)"
         exit
-    else
-        # echo "$major_version is supported!"
-        :
     fi
 }
 
@@ -60,11 +56,16 @@ install_prefs () {
     cat $1 >> $PROFILES/$2/user.js
 }
 
-download_extensions () {
+download_essential_extensions () {
 curl -s -v https://api.github.com/repos/gorhill/uBlock/releases/latest | grep "browser_download_url.*firefox.xpi" | cut -d : -f 2,3 | tr -d \" | wget -qi -
 wget https://www.eff.org/files/https-everywhere-latest.xpi
 curl -s -v https://api.github.com/repos/Cookie-AutoDelete/Cookie-AutoDelete/releases/latest | grep "browser_download_url.*xpi" | cut -d : -f 2,3 | tr -d \" | wget -qi -
 curl -s -v https://api.github.com/repos/Synzvato/decentraleyes/releases/latest | grep "browser_download_url.*xpi" | cut -d : -f 2,3 | tr -d \" | wget -qi -
+}
+
+download_optional_extensions () {
+    wget https://addons.mozilla.org/firefox/downloads/file/3453724/dark_background_and_light_text-0.7.2-an+fx.xpi
+    wget https://addons.mozilla.org/firefox/downloads/file/751297/new_tab_homepage-0.6.2-an+fx.xpi
 }
 
 install_extensions () {
@@ -88,7 +89,8 @@ main () {
             prompt_confirmation
             reset_profile $2
             install_prefs 'user_base.js' $2
-            download_extensions
+            download_essential_extensions
+            #download_optional_extensions
             install_extensions $2;;
         "-g"|"--ghacks")
             check_profile_exists $2
@@ -97,7 +99,8 @@ main () {
             reset_profile $2
             download_prefs
             install_prefs 'user.js user_base.js' $2
-            download_extensions
+            download_essential_extensions
+            #download_optional_extensions
             install_extensions $2;;
         "-c"|"--curated")
             check_profile_exists $2
@@ -106,7 +109,8 @@ main () {
             reset_profile $2
             download_prefs
             install_prefs 'user.js user_base.js user_curated.js' $2
-            download_extensions
+            download_essential_extensions
+            #download_optional_extensions
             install_extensions $2;;
         "-o"|"--open")
             check_profile_exists $2

@@ -5,9 +5,16 @@ To install it right away for Linux users, type:
     git clone https://github.com/sckitt/inject-hatred.git && cd inject-hatred && sudo chmod +x inject-hatred.sh
 
 # DESCRIPTION
-**inject-hatred** is a Bash script to improve the privacy and security of Firefox. The goal is to automate every tweak recommended by [The Hated One](https://www.youtube.com/channel/UCjr2bPAyPV7t35MvcgT3W8Q), with presets available for various threat models. Currently tested and developed for Linux. Modify, redistribute or use it however you like. 
+**inject-hatred** is a Bash script to improve the privacy and security of Firefox. The goal is to automate every tweak recommended by [The Hated One](https://www.youtube.com/channel/UCjr2bPAyPV7t35MvcgT3W8Q). Presets are available for more strict threat models. Currently tested and developed for Linux. Modify, redistribute or use it however you like.
 
     inject-hatred [OPTIONS] PROFILE
+
+Below is everything included in this script:
+
+1. Configure preferences ([two are missing](user_base.js#L29-L32))
+2. Download and install [ghacks-user.js](https://github.com/ghacksuserjs/ghacks-user.js/) (optional)
+3. Download and install obligatory extensions ([complete listing](README.md#L64-L68), [configuring extensions](README.md#L70-L90))
+4. Download and install optional extensions (customizable, disabled by default)
 
 # WHY?
 Your browsing habits reveal a lot about your personal life. The metadata you generate can be scraped by trackers for targeted advertising and government surveillance. With Firefox and the right tweaks, the mitigation of these threats is unparalleled to any other browser. Achieving this would require going through a plethora of settings and extensions, this script aims to automate the whole process.
@@ -21,23 +28,16 @@ Your browsing habits reveal a lot about your personal life. The metadata you gen
     -c, --curated                    Install base setup, in addition to
                                      ghacks-user.js and curated preferences
 
-# OVERVIEW
-Below is everything included in this script:
-
-1. Configure preferences ([two are missing](user_base.js#L29-L32))
-2. Download and install [ghacks-user.js](https://github.com/ghacksuserjs/ghacks-user.js/) (optional)
-3. Download and install extensions ([uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/), [HTTPS Everywhere](https://addons.mozilla.org/en-US/firefox/addon/https-everywhere/), [Cookie AutoDelete](https://addons.mozilla.org/en-US/firefox/addon/cookie-autodelete/), [Decentraleyes](https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/)) **See [DETAILS](#details) for configuring extensions
-
 # DETAILS
 Below is every tweak and its source. Some sources contain duplicate instructions, which have been redacted for brevity:
 
 ### (2019.12.11) [How to secure your online accounts](https://www.youtube.com/watch?v=3H2CKTRqOEQ)
-[about:preferences]
+**[about:preferences]**
 * General > Network Settings > Settings... > check `Enable DNS over HTTPS`
 
 ### (2019.03.17) [How to configure Firefox settings for maximum privacy and security](https://www.youtube.com/watch?v=tQhWdsFMc24)
-[about:preferences]
-* Privacy & Security > Content Blocking > Strict (conflicts with [tweaks from an older tutorial](README.md#L108-L109), which supercedes this)
+**[about:preferences]**
+* Privacy & Security > Content Blocking > Strict (conflicts with [tweaks from an older tutorial](README.md#L117-L118), which supercedes this)
 * Privacy & Security > History > Firefox will `Use custom settings for history`
 * Privacy & Security > History > check `Always use private browsing mode`
 * Privacy & Security > Cookies and Site Data > Clear Data...
@@ -56,39 +56,39 @@ Below is every tweak and its source. Some sources contain duplicate instructions
 * Home > Firefox Home Content > uncheck `Top Sites`, `Highlights`, `Snippets`
 * Firefox Account > Do not use sync
 
-[about:config]
+**[about:config]**
 * copy and paste settings from [privacytools](https://www.privacytools.io/browsers/)
 
-[about:addons]
+**[about:addons]**
 * install [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
 * install [HTTPS Everywhere](https://addons.mozilla.org/en-US/firefox/addon/https-everywhere/)
 * install [Cookie AutoDelete](https://addons.mozilla.org/en-US/firefox/addon/cookie-autodelete/)
 * install [Decentraleyes](https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/)
 
-[about:addons > uBlock Origin]
+**[about:addons > uBlock Origin]**
 * Dashboard > Settings > I am an advanced user
 * Dashboard > Settings > Privacy > check all options
 * Dashboard > Settings > Default behavior > check `Block media`, `Block remote fonts`, `Disable JavaScript`
 * Dashboard > Filter lists > Built-in > check all options
 * Dashboard > Filter lists > Malware domains > check all options
-* Main menu > domains connected > 3rd-party = globally blocked
-* Main menu > domains connected > 3rd-party scripts = globally blocked
 * Main menu > domains connected > 3rd-party frames = globally blocked
+* Main menu > domains connected > 3rd-party scripts = globally blocked
+* Main menu > domains connected > 3rd-party = globally blocked
 
-[about:addons > HTTPS Everywhere]
+**[about:addons > HTTPS Everywhere]**
 * Main menu > check `Encrypt All Sites Eligible`
 
-[about:addons > Cookie AutoDelete]
+**[about:addons > Cookie AutoDelete]**
 * Main menu > toggle `Auto-Delete Enabled`
 * Settings > check `Enable Cleanup on Domain Change`
 * Settings > check `Clean Cookies from Open Tabs on Startup`
 * Settings > check `Localstorage Cleanup (Firefox 58+)`
 
-[about:addons > Decentraleyes]
+**[about:addons > Decentraleyes]**
 * Settings > check `Block requests for missing resources`
 
 ### (2018.10.26) [How to stop Google spying? Google privacy settings, uBlock Origin and Google alternatives.](https://www.youtube.com/watch?v=6EfJR1lI0l0)
-[about:addons > uBlock Origin]
+**[about:addons > uBlock Origin]**
 * Dashboard > My rules > Temporary rules > Paste the list of rules below into the text area. Save and commit your changes.
 ```
 * admob.com * block
@@ -111,7 +111,7 @@ Below is every tweak and its source. Some sources contain duplicate instructions
 ```
 
 ### (2018.02.22) [How to protect your online privacy in 2018 | From noob to pro in 14 minutes or less | Tutorial](https://www.youtube.com/watch?v=gFsRXfifcYg)
-[about:preferences]
+**[about:preferences]**
 * Privacy & Security > Tracking Protection > select `Always`
 * Privacy & Security > History > Accept third-party cookies `Never`
 
