@@ -37,7 +37,7 @@ Below is every tweak and its source. Some sources contain duplicate instructions
 
 ### (2019.03.17) [How to configure Firefox settings for maximum privacy and security](https://www.youtube.com/watch?v=tQhWdsFMc24)
 **[about:preferences]**
-* Privacy & Security > Content Blocking > Strict (conflicts with [tweaks from an older tutorial](README.md#L117-L118), which supercedes this)
+* Privacy & Security > Content Blocking > Strict (conflicts with [tweaks from an older tutorial](https://github.com/sckitt/inject-hatred/blame/master/README.md#L115-L116), which supercedes this)
 * Privacy & Security > History > Firefox will `Use custom settings for history`
 * Privacy & Security > History > check `Always use private browsing mode`
 * Privacy & Security > Cookies and Site Data > Clear Data...
