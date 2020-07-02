@@ -11,9 +11,9 @@ To install it right away for Linux users, type:
 
 Below is everything included in this script:
 
-1. Configure preferences ([two are missing](user_base.js#L29-L32))
+1. Configure preferences ([two are missing](https://github.com/sckitt/inject-hatred/blame/master/README.md#L115-L116))
 2. Download and install [ghacks-user.js](https://github.com/ghacksuserjs/ghacks-user.js/) (optional)
-3. Download and install obligatory extensions ([complete listing](README.md#L64-L68), [configuring extensions](README.md#L70-L90))
+3. Download and install obligatory extensions ([complete listing](https://github.com/sckitt/inject-hatred/blame/master/README.md#L62-L66), [configuring extensions](https://github.com/sckitt/inject-hatred/blame/master/README.md#L68-L88))
 4. Download and install optional extensions (customizable, disabled by default)
 
 # WHY?
