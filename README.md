@@ -20,13 +20,12 @@ Below is everything included in this script:
 Your browsing habits reveal a lot about your personal life. The metadata you generate can be scraped by trackers for targeted advertising and government surveillance. With Firefox and the right tweaks, the mitigation of these threats is unparalleled to any other browser. Achieving this would require going through a plethora of settings and extensions, this script aims to automate the whole process.
 
 # OPTIONS
+    -h, --help                       Show help
     -ls                              List profiles
     -o, --open                       Open profile directory
-    -b, --base                       Install base setup
-    -g, --ghacks                     Install base setup, in addition to
-                                     ghacks-user.js
-    -c, --curated                    Install base setup, in addition to
-                                     ghacks-user.js and curated preferences
+    --standard                       The Hated One's tweaks are enabled
+    --safer                          Standard + ghacks-user.js
+    --safest                         Safer + curated preferences
 
 # DETAILS
 Below is every tweak and its source. Some sources contain duplicate instructions, which have been redacted for brevity:
