@@ -19,14 +19,13 @@ check_profile_exists () {
 check_browser_version () {
     output=$(firefox -v)
     version=${output##* }
-    #major_version="${version%.*}"
-    major_version="79.0"
+    firefox_version="${version%.*}"
 }
 
 check_ghacks_support () {
     check_browser_version
 
-    if (( $(echo "$major_version < 51.0" |bc -l) )); then
+    if (( $(echo "$firefox_version < 51.0" |bc -l) )); then
         echo "Please upgrade to a newer version of Firefox (51.0+)"
         exit
     fi
@@ -56,10 +55,10 @@ reset_profile () {
 
 install_prefs () {
     cat $1 >> $PROFILES/$2/user.js
+    rm user.js
 }
 
 prompt_essential_extensions () {
-    echo $PROFILES/$1
     firefox --profile $PROFILES/$1 https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/ https://addons.mozilla.org/en-US/firefox/addon/https-everywhere/ https://addons.mozilla.org/en-US/firefox/addon/cookie-autodelete/ https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/
 }
 
@@ -70,20 +69,15 @@ prompt_optional_extensions () {
 download_prefs () {
     check_browser_version
 
-    wget "https://github.com/ghacksuserjs/ghacks-user.js/archive/"${major_version}".zip"
-    unzip -n -j \*.zip "ghacks-user.js-"${major_version}"/user.js"
-    rm *.zip
-}
-
-ping_prefs () {
-    check_browser_version
-
-    if wget -q --method=HEAD https://github.com/ghacksuserjs/ghacks-user.js/archive/"${major_version}".zip; then
-        wget "https://github.com/ghacksuserjs/ghacks-user.js/archive/"${major_version}".zip"
-        unzip -n -j \*.zip "ghacks-user.js-"${major_version}"/user.js"
+    if wget -q --method=HEAD https://github.com/ghacksuserjs/ghacks-user.js/archive/"${firefox_version}".zip; then
+        wget "https://github.com/ghacksuserjs/ghacks-user.js/archive/"${firefox_version}".zip"
+        unzip -n -j \*.zip "ghacks-user.js-"${firefox_version}"/user.js"
         rm *.zip
     else
-        : # download latest version
+        latest_release=$(curl -s https://api.github.com/repos/ghacksuserjs/ghacks-user.js/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+        wget "https://github.com/ghacksuserjs/ghacks-user.js/archive/"${latest_release}".zip"
+        unzip -n -j \*.zip "ghacks-user.js-"${latest_release}"/user.js"
+        rm *.zip
     fi
 }
 
@@ -98,8 +92,9 @@ main () {
             prompt_confirmation
             reset_profile $2
             install_prefs 'user_base.js' $2
-            prompt_essential_extensions $2;;
+            prompt_essential_extensions $2
             #prompt_optional_extensions $2
+            :;;
         "--safer")
             check_profile_exists $2
             check_ghacks_support
@@ -107,8 +102,9 @@ main () {
             reset_profile $2
             download_prefs
             install_prefs 'user.js user_base.js' $2
-            prompt_essential_extensions $2;;
+            prompt_essential_extensions $2
             #prompt_optional_extensions $2
+            :;;
         "--safest")
             check_profile_exists $2
             check_ghacks_support
@@ -116,8 +112,9 @@ main () {
             reset_profile $2
             download_prefs
             install_prefs 'user.js user_base.js user_curated.js' $2
-            prompt_essential_extensions $2;;
-            #prompt_optional_extensions $2
+            prompt_essential_extensions $2
+            prompt_optional_extensions $2
+            :;;
         "-o"|"--open")
             check_profile_exists $2
             nemo -t $PROFILES/$2;;

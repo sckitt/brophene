@@ -4,6 +4,6 @@ OPTIONS
     -h, --help                       Show help
     -ls                              List profiles
     -o, --open                       Open profile directory
-    --standard                       The Hated One's tweaks are enabled
-    --safer                          Standard + ghacks-user.js
-    --safest                         Safer + curated preferences
+    --standard PROFILE               The Hated One's tweaks are enabled
+    --safer PROFILE                  Standard + ghacks-user.js
+    --safest PROFILE                 Safer + curated preferences
