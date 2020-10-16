@@ -5,15 +5,15 @@ To install it right away for Linux users, type:
     git clone https://github.com/sckitt/brophene.git && cd brophene && sudo chmod +x brophene.sh
 
 # DESCRIPTION
-**Brophene** is a privacy and security-focused setup script for Firefox. The goal is to automate every tweak recommended by [The Hated One](https://www.youtube.com/channel/UCjr2bPAyPV7t35MvcgT3W8Q). Additional presets are available for extra hardening. Currently tested and developed for Linux.
+**Brophene** is a privacy/security-hardening script for Firefox. The goal is to automate every tweak recommended by [The Hated One](https://www.youtube.com/channel/UCjr2bPAyPV7t35MvcgT3W8Q). Additional presets are available for improvements and personalization. Tested and developed for Linux.
 
-    ./brophene.sh [OPTIONS] PROFILE
+    ./brophene.sh [OPTIONS]
 
 Below is everything included in this script:
 
-1. Configure preferences ([two are missing](https://github.com/sckitt/brophene/blame/master/README.md#L115-L116))
+1. Configure preferences ([two are missing](https://github.com/sckitt/brophene/blame/master/README.md#L114-L115))
 2. Download and install [ghacks-user.js](https://github.com/ghacksuserjs/ghacks-user.js/) (optional)
-3. Download and install obligatory extensions ([complete listing](https://github.com/sckitt/brophene/blame/master/README.md#L62-L66), configuring extensions: [1](https://github.com/sckitt/brophene/blame/master/README.md#L68-L88) [2](https://github.com/sckitt/brophene/blame/master/README.md#L91-L111) [3](https://github.com/sckitt/brophene/blame/master/README.md#L121-L139))
+3. Download and install obligatory extensions ([complete listing](https://github.com/sckitt/brophene/blame/master/README.md#L62-L66), configuring extensions: [1](https://github.com/sckitt/brophene/blame/master/README.md#L67-L87) [2](https://github.com/sckitt/brophene/blame/master/README.md#L89-L110) [3](https://github.com/sckitt/brophene/blame/master/README.md#L120-L138))
 4. Download and install optional extensions (optional, customizable)
 
 # WHY?
@@ -23,9 +23,9 @@ Your browsing habits reveal a lot about your personal life. The metadata you gen
     -h, --help                       Show help
     -ls                              List profiles
     -o, --open                       Open profile directory
-    --standard PROFILE               The Hated One's tweaks are enabled
-    --safer PROFILE                  Standard + ghacks-user.js
-    --safest PROFILE                 Safer + curated preferences
+    --standard [PROFILE]               The Hated One's tweaks are enabled
+    --safer [PROFILE]                  Standard + ghacks-user.js
+    --safest [PROFILE]                 Safer + curated preferences
 
 # DETAILS
 Below is every tweak and its source. Some sources contain duplicate instructions, which have been redacted for brevity:
