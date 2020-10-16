@@ -13,7 +13,7 @@ Below is everything included in this script:
 
 1. Configure preferences ([two are missing](https://github.com/sckitt/brophene/blame/master/README.md#L114-L115))
 2. Download and install [ghacks-user.js](https://github.com/ghacksuserjs/ghacks-user.js/) (optional)
-3. Download and install obligatory extensions ([complete listing](https://github.com/sckitt/brophene/blame/master/README.md#L62-L66), configuring extensions: [1](https://github.com/sckitt/brophene/blame/master/README.md#L67-L87) [2](https://github.com/sckitt/brophene/blame/master/README.md#L89-L110) [3](https://github.com/sckitt/brophene/blame/master/README.md#L120-L138))
+3. Download and install obligatory extensions ([complete listing](https://github.com/sckitt/brophene/blame/master/README.md#L61-L65), configuring extensions: [1](https://github.com/sckitt/brophene/blame/master/README.md#L67-L87) [2](https://github.com/sckitt/brophene/blame/master/README.md#L89-L110) [3](https://github.com/sckitt/brophene/blame/master/README.md#L120-L138))
 4. Download and install optional extensions (optional, customizable)
 
 # WHY?
@@ -23,9 +23,9 @@ Your browsing habits reveal a lot about your personal life. The metadata you gen
     -h, --help                       Show help
     -ls                              List profiles
     -o, --open                       Open profile directory
-    --standard [PROFILE]               The Hated One's tweaks are enabled
-    --safer [PROFILE]                  Standard + ghacks-user.js
-    --safest [PROFILE]                 Safer + curated preferences
+    --standard [PROFILE]             The Hated One's tweaks are enabled
+    --safer [PROFILE]                Standard + ghacks-user.js
+    --safest [PROFILE]               Safer + curated preferences
 
 # DETAILS
 Below is every tweak and its source. Some sources contain duplicate instructions, which have been redacted for brevity:
