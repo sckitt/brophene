@@ -69,7 +69,7 @@ prompt_essential_extensions () {
 prompt_optional_extensions () {
     firefox --profile $PROFILES/$1 \
     https://addons.mozilla.org/en-US/firefox/addon/dark-background-light-text/ \
-    https://addons.mozilla.org/en-US/firefox/addon/new-tab-homepage/ \
+    https://addons.mozilla.org/en-US/firefox/addon/new-tab-override \
     https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/ \
     https://greasyfork.org/en/scripts/23329-disable-youtube-60-fps-force-30-fps \
     https://addons.mozilla.org/en-US/firefox/addon/dracula-dark-colorscheme/
