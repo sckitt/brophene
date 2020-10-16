@@ -33,7 +33,7 @@ check_ghacks_support () {
 
 prompt_confirmation () {
     while true; do
-        read -p "After this confirmation, all content will be overwritten. Do you want to continue? [y/n]" yn # change to [y/N]
+        read -p "After this confirmation, all content will be overwritten. Do you want to continue? [y/n]" yn
         case $yn in
             [Yy]* ) break;;
             [Nn]* ) exit;;
@@ -59,11 +59,20 @@ install_prefs () {
 }
 
 prompt_essential_extensions () {
-    firefox --profile $PROFILES/$1 https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/ https://addons.mozilla.org/en-US/firefox/addon/https-everywhere/ https://addons.mozilla.org/en-US/firefox/addon/cookie-autodelete/ https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/
+    firefox --profile $PROFILES/$1 \
+    https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/ \
+    https://addons.mozilla.org/en-US/firefox/addon/https-everywhere/ \
+    https://addons.mozilla.org/en-US/firefox/addon/cookie-autodelete/ \
+    https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/
 }
 
 prompt_optional_extensions () {
-    firefox --profile $PROFILES/$1 https://addons.mozilla.org/en-US/firefox/addon/dark-background-light-text/ https://addons.mozilla.org/en-US/firefox/addon/new-tab-homepage/ https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/ https://greasyfork.org/en/scripts/23329-disable-youtube-60-fps-force-30-fps
+    firefox --profile $PROFILES/$1 \
+    https://addons.mozilla.org/en-US/firefox/addon/dark-background-light-text/ \
+    https://addons.mozilla.org/en-US/firefox/addon/new-tab-homepage/ \
+    https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/ \
+    https://greasyfork.org/en/scripts/23329-disable-youtube-60-fps-force-30-fps \
+    https://addons.mozilla.org/en-US/firefox/addon/dracula-dark-colorscheme/
 }
 
 download_prefs () {
@@ -71,12 +80,12 @@ download_prefs () {
 
     if wget -q --method=HEAD https://github.com/ghacksuserjs/ghacks-user.js/archive/"${firefox_version}".zip; then
         wget "https://github.com/ghacksuserjs/ghacks-user.js/archive/"${firefox_version}".zip"
-        unzip -n -j \*.zip "ghacks-user.js-"${firefox_version}"/user.js"
+        unzip -n -j \*.zip "user.js-"${firefox_version}"/user.js"
         rm *.zip
     else
         latest_release=$(curl -s https://api.github.com/repos/ghacksuserjs/ghacks-user.js/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
         wget "https://github.com/ghacksuserjs/ghacks-user.js/archive/"${latest_release}".zip"
-        unzip -n -j \*.zip "ghacks-user.js-"${latest_release}"/user.js"
+        unzip -n -j \*.zip "user.js-"${latest_release}"/user.js"
         rm *.zip
     fi
 }
