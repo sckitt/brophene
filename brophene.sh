@@ -18,8 +18,8 @@ check_profile_exists () {
 
 check_browser_version () {
     output=$(firefox -v)
-    version=${output##* }
-    firefox_version="${version%.*}"
+    version=${output##* } # e.g. '82.0'
+    #firefox_version="${version%.*}" # e.g. '82'; deprecate?
 }
 
 check_ghacks_support () {
@@ -78,13 +78,15 @@ prompt_optional_extensions () {
 download_prefs () {
     check_browser_version
 
-    if wget -q --method=HEAD https://github.com/ghacksuserjs/ghacks-user.js/archive/"${firefox_version}".zip; then
-        wget "https://github.com/ghacksuserjs/ghacks-user.js/archive/"${firefox_version}".zip"
+    if wget -q --method=HEAD https://github.com/arkenfox/user.js/archive/"${firefox_version}".zip; then
+        wget "https://github.com/arkenfox/user.js/archive/"${firefox_version}".zip"
+        echo 'OUTPUT: https://github.com/arkenfox/user.js/archive/'${firefox_version}'.zip'
         unzip -n -j \*.zip "user.js-"${firefox_version}"/user.js"
         rm *.zip
     else
-        latest_release=$(curl -s https://api.github.com/repos/ghacksuserjs/ghacks-user.js/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
-        wget "https://github.com/ghacksuserjs/ghacks-user.js/archive/"${latest_release}".zip"
+        latest_release=$(curl -s https://api.github.com/repos/arkenfox/user.js/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+        wget "https://github.com/arkenfox/user.js/archive/"${latest_release}".zip"
+        echo 'OUTPUT: https://github.com/arkenfox/user.js/archive/'${latest_release}'.zip'
         unzip -n -j \*.zip "user.js-"${latest_release}"/user.js"
         rm *.zip
     fi
