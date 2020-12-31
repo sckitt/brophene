@@ -2,22 +2,22 @@
 
 To install it right away for Linux users, type:
 
-    git clone https://github.com/sckitt/brophene.git && cd brophene && sudo chmod +x brophene.sh
+    git clone https://github.com/sckitt/fhp.git && cd fhp && sudo chmod +x fhp.sh
 
 # DESCRIPTION
-**Brophene** is a privacy/security-hardening script for Firefox. The goal is to automate every tweak recommended by [The Hated One](https://www.youtube.com/channel/UCjr2bPAyPV7t35MvcgT3W8Q). Additional presets are available for improvements and personalization. Tested and developed for Linux.
+**Firefox Hardening Project** (FHP) is an Open Source Bash Script developed to improve the privacy & security of Firefox. The goal is to automate every tweak recommended by [The Hated One](https://www.youtube.com/channel/UCjr2bPAyPV7t35MvcgT3W8Q). Additional presets are available for personalization and stricter hardening. Tested and developed for Linux.
 
-    ./brophene.sh [OPTIONS]
+    ./fhp.sh [OPTIONS] [PROFILE]
 
 Below is everything included in this script:
 
-1. Configure preferences ([two are missing](https://github.com/sckitt/brophene/blame/master/README.md#L114-L115))
+1. Configure preferences ([two are missing](https://github.com/sckitt/fhp/blame/master/README.md#L114-L115))
 2. Download and install [ghacks-user.js](https://github.com/ghacksuserjs/ghacks-user.js/) (optional)
-3. Download and install obligatory extensions ([complete listing](https://github.com/sckitt/brophene/blame/master/README.md#L61-L65), configuring extensions: [1](https://github.com/sckitt/brophene/blame/master/README.md#L67-L87) [2](https://github.com/sckitt/brophene/blame/master/README.md#L89-L110) [3](https://github.com/sckitt/brophene/blame/master/README.md#L120-L138))
+3. Download and install obligatory extensions ([complete listing](https://github.com/sckitt/fhp/blame/master/README.md#L61-L65), configuring extensions: [1](https://github.com/sckitt/fhp/blame/master/README.md#L67-L87) [2](https://github.com/sckitt/fhp/blame/master/README.md#L89-L110) [3](https://github.com/sckitt/fhp/blame/master/README.md#L120-L138))
 4. Download and install optional extensions (optional, customizable)
 
 # WHY?
-Your browsing habits reveal a lot about your personal life. The metadata you generate can be scraped by trackers for targeted advertising and government surveillance. With Firefox and the right tweaks, the mitigation of these threats is unparalleled to any other browser. Achieving this would require going through a plethora of settings and extensions, this script aims to automate the whole process.
+Your browsing habits reveal a lot about your personal life. The data you generate can be scraped by trackers for targeted advertising and government surveillance. With Firefox and the right tweaks, the mitigation of these threats is unparalleled to any other browser. Achieving this would require going through a plethora of settings and extensions, this script aims to automate the whole process.
 
 # OPTIONS
     -h, --help                       Show help
@@ -25,7 +25,7 @@ Your browsing habits reveal a lot about your personal life. The metadata you gen
     -o, --open                       Open profile directory
     --standard [PROFILE]             The Hated One's tweaks are enabled
     --safer [PROFILE]                Standard + ghacks-user.js
-    --safest [PROFILE]               Safer + curated preferences
+    --safest [PROFILE]               Safer + personal tweaks
 
 # DETAILS
 Below is every tweak and its source. Some sources contain duplicate instructions, which have been redacted for brevity:
@@ -36,7 +36,7 @@ Below is every tweak and its source. Some sources contain duplicate instructions
 
 ### (2019.03.17) [How to configure Firefox settings for maximum privacy and security](https://www.youtube.com/watch?v=tQhWdsFMc24)
 **[about:preferences]**
-* Privacy & Security > Content Blocking > Strict (conflicts with [tweaks from an older tutorial](https://github.com/sckitt/brophene/blame/master/README.md#L114-L116), which supercedes this)
+* Privacy & Security > Content Blocking > Strict (conflicts with [tweaks from an older tutorial](https://github.com/sckitt/fhp/blame/master/README.md#L114-L116), which supercedes this)
 * Privacy & Security > History > Firefox will `Use custom settings for history`
 * Privacy & Security > History > check `Always use private browsing mode`
 * Privacy & Security > Cookies and Site Data > Clear Data...

@@ -1,9 +1,9 @@
 SYNOPSIS
-    ./inject-hatred.sh [OPTIONS] PROFILE
+    ./fhp.sh [OPTIONS] [PROFILE]
 OPTIONS
     -h, --help                       Show help
     -ls                              List profiles
     -o, --open                       Open profile directory
-    --standard PROFILE               The Hated One's tweaks are enabled
-    --safer PROFILE                  Standard + ghacks-user.js
-    --safest PROFILE                 Safer + curated preferences
+    --standard [PROFILE]             The Hated One's tweaks are enabled
+    --safer [PROFILE]                Standard + ghacks-user.js
+    --safest [PROFILE]               Safer + personal tweaks
